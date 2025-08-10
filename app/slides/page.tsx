@@ -768,7 +768,7 @@ TALKING SCRIPT:
 
 [Remove item] And here's the magic - smooth exit animation. The component stays in the DOM until the animation finishes, then gets removed.
 
-This is impossible to do cleanly with CSS alone. You'd need complex state management and timing coordination."
+This is impossible to do cleanly with CSS alone. You&apos;d need complex state management and timing coordination."
 
 TIMING: 3-4 minutes
 DEMO TIP: Add and remove multiple items to show the staggered effects!`;
@@ -1136,13 +1136,16 @@ DEMO TIP: Drag the element to different corners to show the constraints!`;
   );
 }
 
-// Performance slide
-function PerformanceSlide() {
-  const [animationType, setAnimationType] = useState<"good" | "bad">("good");
-  const [triggerAnimation, setTriggerAnimation] = useState(0);
+// Key Tips slide - Essential Motion concepts
+function KeyTipsSlide() {
+  // Separate states for each demo
+  const [demoKey, setDemoKey] = useState(0);
+  const [showWithKey, setShowWithKey] = useState(true); // Controls "With Key" / "Without Key" for first demo
+  const [showCorrectStructure, setShowCorrectStructure] = useState(true); // Controls structure for second demo  
+  const [showItems, setShowItems] = useState(true); // Controls visibility of items for AnimatePresence demo
   const [showNotes, setShowNotes] = useState(false);
 
-  const presenterNotes = `🎯 PERFORMANCE SLIDE - Speed Matters
+  const presenterNotes = `🎯 KEY TIPS SLIDE - Essential Motion Rules
 
 KEY POINTS:
 • Motion uses GPU-accelerated properties by default
@@ -1338,7 +1341,7 @@ TALKING SCRIPT:
 
 [Uncheck] And back to full animations for users who enjoy them.
 
-This isn't just nice to have - it's required for WCAG compliance and shows you care about all users."
+This isn&apos;t just nice to have - it&apos;s required for WCAG compliance and shows you care about all users."
 
 TIMING: 2-3 minutes
 DEMO TIP: Toggle the checkbox multiple times to show the dramatic difference!`;
@@ -2567,7 +2570,7 @@ MEETUP TIP: Move around, be social, and encourage people to connect with each ot
               opacity: 0.9
             }}
           >
-            Hope you're excited to start animating with Motion! ✨
+            Hope you&apos;re excited to start animating with Motion! ✨
           </motion.p>
         </motion.div>
       </div>
