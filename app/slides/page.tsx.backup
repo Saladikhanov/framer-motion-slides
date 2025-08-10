@@ -64,8 +64,8 @@ function PresenterNotes({ notes, isVisible, onToggle }: { notes: string, isVisib
           opacity: 0.3,
           transition: "opacity 0.2s ease"
         }}
-        onMouseEnter={(e) => (e.target as HTMLButtonElement).style.opacity = "0.8"}
-        onMouseLeave={(e) => (e.target as HTMLButtonElement).style.opacity = "0.3"}
+        onMouseEnter={(e) => e.target.style.opacity = "0.8"}
+        onMouseLeave={(e) => e.target.style.opacity = "0.3"}
         title={isVisible ? "Hide presenter notes" : "Show presenter notes"}
       >
         📝
@@ -73,11 +73,11 @@ function PresenterNotes({ notes, isVisible, onToggle }: { notes: string, isVisib
 
       <AnimatePresence>
         {isVisible && (
-    <motion.div
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-      style={{
+            style={{
               position: "fixed",
               top: "70px",
               right: "20px",
@@ -113,18 +113,18 @@ function TitleSlide() {
 
 KEY POINTS:
 • Start with energy - "Motion makes the web feel alive!"
-• Point out the animated lines - "This is what we&apos;re building today"
+• Point out the animated lines - "This is what we're building today"
 • Emphasize the rebrand: "Motion is the new name for Framer Motion"
-• Set expectations: "We&apos;ll go from zero to hero in 30 minutes"
+• Set expectations: "We'll go from zero to hero in 30 minutes"
 
 TALKING SCRIPT:
-"Welcome everyone! Today we&apos;re diving into Motion - formerly known as Framer Motion. 
+"Welcome everyone! Today we're diving into Motion - formerly known as Framer Motion. 
 
-[Point to animated lines] See these smooth animations? By the end of this session, you&apos;ll know exactly how to create effects like this with just a few lines of code.
+[Point to animated lines] See these smooth animations? By the end of this session, you'll know exactly how to create effects like this with just a few lines of code.
 
 Motion isn't just another animation library - it's a production-ready solution that's used by companies like Netflix, Spotify, and Airbnb. It's framework-agnostic now, so whether you're using React, Vue, or vanilla JS, Motion has you covered.
 
-We&apos;ll cover everything from basic animations to advanced gestures, performance optimization, and accessibility. Let's make your websites come alive!"
+We'll cover everything from basic animations to advanced gestures, performance optimization, and accessibility. Let's make your websites come alive!"
 
 TIMING: 2-3 minutes
 `;
@@ -376,7 +376,7 @@ STRATEGY: Use the modal details as your talking points script!`;
       icon: "✨",
       title: "Enter/Exit",
       summary: "AnimatePresence for mount/unmount",
-      details: "TALKING POINTS:\n• Demo: Add/remove items with smooth animations\n• Key insight: CSS can&apos;t animate unmounting elements\n• Show: exit animations before DOM removal\n• Use cases: Modals, notifications, route transitions\n• Technical: AnimatePresence waits for exit animation\n• Common mistake: Forgetting unique keys",
+      details: "TALKING POINTS:\n• Demo: Add/remove items with smooth animations\n• Key insight: CSS can't animate unmounting elements\n• Show: exit animations before DOM removal\n• Use cases: Modals, notifications, route transitions\n• Technical: AnimatePresence waits for exit animation\n• Common mistake: Forgetting unique keys",
       color: "#8b5cf6"
     },
     {
@@ -425,7 +425,7 @@ STRATEGY: Use the modal details as your talking points script!`;
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-      style={{
+          style={{
             fontSize: "5rem",
             fontWeight: "bold",
             textAlign: "center",
@@ -636,7 +636,7 @@ DEMO TIP: Trigger animation multiple times to show consistency!`;
                   borderRadius: "8px",
                   border: "none",
                   background: "#6366f1",
-        color: "white",
+                  color: "white",
                   cursor: "pointer",
                   marginBottom: "1rem"
                 }}
@@ -705,10 +705,10 @@ DEMO TIP: Trigger animation multiple times to show consistency!`;
                 padding: "1rem 2rem",
                 fontSize: "1.2rem",
                 borderRadius: "8px",
-        border: "none",
+                border: "none",
                 background: "#10b981",
                 color: "white",
-        cursor: "pointer",
+                cursor: "pointer",
                 marginBottom: "2rem"
               }}
             >
@@ -817,7 +817,7 @@ DEMO TIP: Add and remove multiple items to show the staggered effects!`;
               </pre>
             </div>
             <p style={{ fontSize: "1.2rem", opacity: 0.8, marginTop: "1rem" }}>
-              CSS can&apos;t animate elements being removed from DOM!
+              CSS can't animate elements being removed from DOM!
             </p>
           </div>
 
@@ -825,9 +825,9 @@ DEMO TIP: Add and remove multiple items to show the staggered effects!`;
           <div>
             <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>Live Demo</h3>
             <div style={{ marginBottom: "2rem" }}>
-      <button
+              <button
                 onClick={addItem}
-        style={{
+                style={{
                   padding: "0.8rem 1.5rem",
                   marginRight: "1rem",
                   fontSize: "1.1rem",
@@ -839,19 +839,19 @@ DEMO TIP: Add and remove multiple items to show the staggered effects!`;
                 }}
               >
                 Add Item
-      </button>
+              </button>
             </div>
 
             <div style={{ minHeight: "300px" }}>
-      <AnimatePresence>
+              <AnimatePresence>
                 {items.map(item => (
-          <motion.div
+                  <motion.div
                     key={item}
                     initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 100 }}
                     transition={{ duration: 0.3 }}
-            style={{
+                    style={{
                       background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
                       padding: "1rem",
                       margin: "0.5rem 0",
@@ -868,7 +868,7 @@ DEMO TIP: Add and remove multiple items to show the staggered effects!`;
                       style={{
                         background: "rgba(255,255,255,0.2)",
                         border: "none",
-              color: "white",
+                        color: "white",
                         padding: "0.5rem 1rem",
                         borderRadius: "4px",
                         cursor: "pointer"
@@ -876,10 +876,10 @@ DEMO TIP: Add and remove multiple items to show the staggered effects!`;
                     >
                       Remove
                     </button>
-          </motion.div>
+                  </motion.div>
                 ))}
-      </AnimatePresence>
-    </div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </div>
@@ -1078,12 +1078,12 @@ DEMO TIP: Drag the element to different corners to show the constraints!`;
             <motion.button
               whileHover={{ scale: 1.1, backgroundColor: "#059669" }}
               whileTap={{ scale: 0.9 }}
-        style={{
+              style={{
                 padding: "1rem 2rem",
                 fontSize: "1.2rem",
                 borderRadius: "12px",
                 border: "none",
-          background: "#10b981",
+                background: "#10b981",
                 color: "white",
                 cursor: "pointer",
                 marginBottom: "3rem",
@@ -1114,20 +1114,1098 @@ DEMO TIP: Drag the element to different corners to show the constraints!`;
                   height: 60,
                   borderRadius: 30,
                   background: "linear-gradient(135deg, #10b981, #059669)",
-          position: "absolute",
+                  position: "absolute",
                   cursor: "grab",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "1.5rem"
-        }}
+                }}
               >
                 🎯
               </motion.div>
-    </div>
+            </div>
 
             <p style={{ fontSize: "1rem", opacity: 0.7, textAlign: "center", marginTop: "1rem" }}>
               Drag position: ({Math.round(dragPosition.x)}, {Math.round(dragPosition.y)})
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// Key Tips slide - Essential Motion concepts
+function KeyTipsSlide() {
+  // Separate states for each demo
+  const [demoKey, setDemoKey] = useState(0);
+  const [showWithKey, setShowWithKey] = useState(true); // Controls "With Key" / "Without Key" for first demo
+  const [showCorrectStructure, setShowCorrectStructure] = useState(true); // Controls structure for second demo  
+  const [showItems, setShowItems] = useState(true); // Controls visibility of items for AnimatePresence demo
+  const [showNotes, setShowNotes] = useState(false);
+
+  const presenterNotes = `🎯 KEY TIPS SLIDE - Essential Motion Rules
+
+KEY POINTS:
+• Motion uses GPU-accelerated properties by default
+• Show good vs bad practices
+• Explain layout thrashing vs transform animations
+• This addresses the "animations are slow" myth
+
+TALKING SCRIPT:
+"Let's talk performance. There's a myth that animations are slow. The truth? Bad animations are slow.
+
+[Show good practices] Motion animates transform properties by default - x, y, scale, rotate. These are GPU-accelerated and run at 60fps.
+
+[Toggle to bad] Here's what NOT to do - animating layout properties like left, top, width, height. These cause layout recalculations on every frame.
+
+[Trigger animation] Same visual result, but the performance difference is huge. Motion guides you toward the fast path by making the right thing easy.
+
+This is why Motion apps feel smooth while others feel janky."
+
+TIMING: 3-4 minutes
+DEMO TIP: Toggle between good/bad multiple times to emphasize the difference!`;
+
+  return (
+    <>
+      <PresenterNotes
+        notes={presenterNotes}
+        isVisible={showNotes}
+        onToggle={() => setShowNotes(!showNotes)}
+      />
+      <div style={{ maxWidth: "95%", margin: "0 auto", padding: "2rem" }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ fontSize: "4rem", textAlign: "center", marginBottom: "3rem", color: "#f59e0b" }}
+        >
+          ⚡ Performance
+        </motion.h1>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
+          {/* Code comparison */}
+          <div>
+            <div style={{ marginBottom: "2rem" }}>
+              <button
+                onClick={() => setAnimationType(animationType === "good" ? "bad" : "good")}
+                style={{
+                  padding: "1rem 2rem",
+                  fontSize: "1.2rem",
+                  borderRadius: "8px",
+                  border: "none",
+                  background: "#f59e0b",
+                  color: "white",
+                  cursor: "pointer"
+                }}
+              >
+                Show {animationType === "good" ? "Bad" : "Good"} Practice
+              </button>
+            </div>
+
+            <AnimatePresence mode="wait">
+              {animationType === "good" ? (
+                <motion.div
+                  key="good"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  style={{ background: "#1a1a1a", padding: "1.5rem", borderRadius: "8px" }}
+                >
+                  <h3 style={{ color: "#10b981", marginBottom: "1rem" }}>✅ Good Performance</h3>
+                  <pre style={{ fontSize: "1.1rem", lineHeight: 1.4, margin: 0 }}>
+                    <code>{`// Uses GPU-accelerated properties
+<motion.div
+  animate={{
+    x: 100,           // transform: translateX
+    y: 50,            // transform: translateY
+    scale: 1.2,       // transform: scale
+    rotate: 45,       // transform: rotate
+    opacity: 0.8      // opacity
+  }}
+/>`}</code>
+                  </pre>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="bad"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  style={{ background: "#1a1a1a", padding: "1.5rem", borderRadius: "8px" }}
+                >
+                  <h3 style={{ color: "#ef4444", marginBottom: "1rem" }}>❌ Poor Performance</h3>
+                  <pre style={{ fontSize: "1.1rem", lineHeight: 1.4, margin: 0 }}>
+                    <code>{`// Causes layout thrashing
+<motion.div
+  animate={{
+    left: 100,        // triggers layout
+    top: 50,          // triggers layout
+    width: 200,       // triggers layout
+    height: 150,      // triggers layout
+    marginLeft: 20    // triggers layout
+  }}
+/>`}</code>
+                  </pre>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Performance demo */}
+          <div style={{ textAlign: "center" }}>
+            <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>Performance Demo</h3>
+
+            <button
+              onClick={() => setTriggerAnimation(prev => prev + 1)}
+              style={{
+                padding: "1rem 2rem",
+                fontSize: "1.2rem",
+                borderRadius: "8px",
+                border: "none",
+                background: "#10b981",
+                color: "white",
+                cursor: "pointer",
+                marginBottom: "2rem"
+              }}
+            >
+              Trigger Animation
+            </button>
+
+            <motion.div
+              key={`${animationType}-${triggerAnimation}`}
+              initial={{
+                x: animationType === "good" ? 0 : 0,
+                scale: 1,
+                opacity: 1
+              }}
+              animate={{
+                x: animationType === "good" ? 100 : 100,
+                scale: animationType === "good" ? 1.2 : 1.2,
+                opacity: animationType === "good" ? 0.8 : 0.8
+              }}
+              transition={{
+                duration: 1,
+                type: "spring",
+                stiffness: 100
+              }}
+              style={{
+                width: 100,
+                height: 100,
+                background: animationType === "good"
+                  ? "linear-gradient(135deg, #10b981, #059669)"
+                  : "linear-gradient(135deg, #ef4444, #dc2626)",
+                borderRadius: "12px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "2rem auto",
+                fontSize: "2rem"
+              }}
+            >
+              {animationType === "good" ? "⚡" : "🐌"}
+            </motion.div>
+
+            <p style={{ fontSize: "1.2rem", opacity: 0.8 }}>
+              {animationType === "good"
+                ? "Smooth 60fps with GPU acceleration"
+                : "Janky animation causing reflows"
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// Accessibility slide
+function AccessibilitySlide() {
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [showNotes, setShowNotes] = useState(false);
+
+  const presenterNotes = `🎯 ACCESSIBILITY SLIDE - Inclusive by Design
+
+KEY POINTS:
+• prefers-reduced-motion is a real accessibility need
+• Motion respects this automatically in many cases
+• useReducedMotion hook for custom handling
+• This is about being inclusive, not just compliant
+
+TALKING SCRIPT:
+"Finally, accessibility. Some users get dizzy or nauseous from animations. Motion takes this seriously.
+
+[Show code] The useReducedMotion hook detects the user's system preference. You can use this to disable or reduce animations.
+
+[Check reduced motion] Watch what happens - instead of crazy spinning and movement, we get a gentle fade. Still engaging, but accessible.
+
+[Uncheck] And back to full animations for users who enjoy them.
+
+This isn&apos;t just nice to have - it&apos;s required for WCAG compliance and shows you care about all users."
+
+TIMING: 2-3 minutes
+DEMO TIP: Toggle the checkbox multiple times to show the dramatic difference!`;
+
+  return (
+    <>
+      <PresenterNotes
+        notes={presenterNotes}
+        isVisible={showNotes}
+        onToggle={() => setShowNotes(!showNotes)}
+      />
+      <div style={{ maxWidth: "95%", margin: "0 auto", padding: "2rem" }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ fontSize: "4rem", textAlign: "center", marginBottom: "3rem", color: "#8b5cf6" }}
+        >
+          ♿ Accessibility
+        </motion.h1>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
+          {/* Code example */}
+          <div>
+            <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>Reduced Motion</h3>
+            <div style={{ background: "#1a1a1a", padding: "1.5rem", borderRadius: "8px", marginBottom: "2rem" }}>
+              <pre style={{ fontSize: "1.1rem", lineHeight: 1.4, margin: 0 }}>
+                <code>{`import { useReducedMotion } from "framer-motion"
+
+function MyComponent() {
+  const shouldReduceMotion = useReducedMotion()
+  
+  return (
+    <motion.div
+      animate={{ x: 100 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.5
+      }}
+    />
+  )
+}`}</code>
+              </pre>
+            </div>
+            <p style={{ fontSize: "1.2rem", opacity: 0.8 }}>
+              Automatically respects user's motion preferences
+            </p>
+          </div>
+
+          {/* Demo */}
+          <div style={{ textAlign: "center" }}>
+            <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>Demo</h3>
+
+            <div style={{ marginBottom: "2rem" }}>
+              <label style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", fontSize: "1.2rem" }}>
+                <input
+                  type="checkbox"
+                  checked={reducedMotion}
+                  onChange={(e) => setReducedMotion(e.target.checked)}
+                  style={{ transform: "scale(1.5)" }}
+                />
+                Simulate Reduced Motion
+              </label>
+            </div>
+
+            <motion.div
+              animate={reducedMotion ? {
+                // Minimal motion - just a subtle fade
+                opacity: [1, 0.8, 1]
+              } : {
+                // Full animation
+                x: [0, 100, 0],
+                rotate: [0, 180, 360],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{
+                duration: reducedMotion ? 3 : 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              style={{
+                width: 100,
+                height: 100,
+                background: "linear-gradient(135deg, #8b5cf6, #6366f1)",
+                borderRadius: "12px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "2rem auto",
+                fontSize: "2rem"
+              }}
+            >
+              ♿
+            </motion.div>
+
+            <p style={{ fontSize: "1.2rem", opacity: 0.8 }}>
+              {reducedMotion
+                ? "Minimal motion for accessibility"
+                : "Full animations for enhanced experience"
+              }
+            </p>
+
+            <div style={{ marginTop: "2rem", padding: "1rem", background: "rgba(139, 92, 246, 0.1)", borderRadius: "8px" }}>
+              <p style={{ fontSize: "1rem", opacity: 0.9, margin: 0 }}>
+                <strong>WCAG Compliance:</strong> Respecting prefers-reduced-motion is required for accessibility standards
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// Remote Control slide - trigger animations on other components
+function RemoteControlSlide() {
+  const [triggerCount, setTriggerCount] = useState(0);
+  const [showNotes, setShowNotes] = useState(false);
+
+  const presenterNotes = `🎯 REMOTE CONTROL SLIDE - Cross-Component Animation
+
+KEY POINTS:
+• Motion animations can be triggered from anywhere in your app
+• State changes automatically trigger re-animations
+• Perfect for user interactions, form validation, notifications
+• Shows the power of declarative animations
+
+TALKING SCRIPT:
+"Here's something really cool - you can trigger animations on any component from anywhere in your app.
+
+[Point to button] This button doesn't contain the animations - it just updates state.
+
+[Click button] Watch what happens - multiple components react to the same state change. The card shakes, the icon spins, the text changes color, and particles fly.
+
+[Click multiple times] Each click triggers fresh animations. This is perfect for things like form validation errors, notification systems, or interactive feedback.
+
+The beauty is that the animations are declarative - you just describe what should happen, and Motion handles the timing and coordination."
+
+TIMING: 3-4 minutes
+DEMO TIP: Click the button multiple times rapidly to show the animation queuing!`;
+
+  const triggerAnimations = () => {
+    setTriggerCount(prev => prev + 1);
+  };
+
+  return (
+    <>
+      <PresenterNotes
+        notes={presenterNotes}
+        isVisible={showNotes}
+        onToggle={() => setShowNotes(!showNotes)}
+      />
+      <div style={{ maxWidth: "95%", margin: "0 auto", padding: "2rem" }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ fontSize: "4rem", textAlign: "center", marginBottom: "3rem", color: "#f97316" }}
+        >
+          🎮 Remote Control Animations
+        </motion.h1>
+
+        {/* Central trigger button */}
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <button
+            onClick={triggerAnimations}
+            style={{
+              padding: "1.5rem 3rem",
+              fontSize: "1.5rem",
+              borderRadius: "16px",
+              border: "none",
+              background: "linear-gradient(135deg, #f97316, #ea580c)",
+              color: "white",
+              cursor: "pointer",
+              fontWeight: "bold",
+              boxShadow: "0 8px 20px rgba(249, 115, 22, 0.4)",
+              transform: "translateY(0)",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = "translateY(-2px)";
+              e.target.style.boxShadow = "0 12px 25px rgba(249, 115, 22, 0.5)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "0 8px 20px rgba(249, 115, 22, 0.4)";
+            }}
+          >
+            🎯 Trigger Remote Animations
+          </button>
+
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
+          {/* Code example */}
+          <div>
+            <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>The Code</h3>
+            <div style={{ background: "#1a1a1a", padding: "1.5rem", borderRadius: "8px" }}>
+              <pre style={{ fontSize: "0.9rem", lineHeight: 1.4, margin: 0 }}>
+                <code>{`// Button updates state
+<button onClick={() => setTrigger(prev => prev + 1)}>
+  Trigger Animations
+</button>
+
+// Components react automatically
+    <motion.div
+  key={trigger} // Forces re-animation
+  initial={{ x: 0, rotate: 0 }}
+  animate={{ 
+    x: [0, -10, 10, -5, 5, 0],
+    rotate: [0, -2, 2, -1, 1, 0]
+  }}
+  transition={{ duration: 0.6 }}
+>
+  I shake when triggered!
+</motion.div>
+
+<motion.div
+  key={\`icon-\${trigger}\`}
+  animate={{ rotate: trigger > 0 ? 360 : 0 }}
+>
+  ⚡ I spin!
+</motion.div>`}</code>
+              </pre>
+            </div>
+          </div>
+
+          {/* Live demo - multiple components that react */}
+          <div style={{ position: "relative" }}>
+            <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>Watch Components React</h3>
+
+            {/* Shaking card */}
+            <motion.div
+              key={`card-${triggerCount}`}
+              initial={{ x: 0, rotate: 0, scale: 1 }}
+              animate={{
+                x: triggerCount > 0 ? [0, -10, 10, -5, 5, 0] : 0,
+                rotate: triggerCount > 0 ? [0, -2, 2, -1, 1, 0] : 0,
+                scale: triggerCount > 0 ? [1, 1.05, 1] : 1
+              }}
+              transition={{ duration: 0.6 }}
+              style={{
+                background: "linear-gradient(135deg, #3b82f6, #1d4ed8)",
+                padding: "1.5rem",
+                borderRadius: "12px",
+                marginBottom: "2rem",
+                color: "white",
+                position: "relative",
+                zIndex: 2
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                {/* Spinning icon */}
+                <motion.div
+                  key={`icon-${triggerCount}`}
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: triggerCount > 0 ? 360 : 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  style={{ fontSize: "2rem" }}
+                >
+                  ⚡
+                </motion.div>
+
+                {/* Color-changing text */}
+                <motion.div
+                  key={`text-${triggerCount}`}
+                  initial={{ color: "#ffffff" }}
+                  animate={{
+                    color: triggerCount > 0
+                      ? ["#ffffff", "#fbbf24", "#f59e0b", "#ffffff"]
+                      : "#ffffff"
+                  }}
+                  transition={{ duration: 1 }}
+                >
+                  <h4 style={{ margin: 0, fontSize: "1.3rem" }}>Reactive Component</h4>
+                  <p style={{ margin: "0.5rem 0 0 0", opacity: 0.9 }}>
+                    I respond to remote triggers!
+                  </p>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Flying particles - positioned properly */}
+            <div style={{
+              position: "absolute",
+              top: "60px",
+              left: "0",
+              right: "0",
+              height: "150px",
+              overflow: "visible",
+              pointerEvents: "none",
+              zIndex: 1
+            }}>
+              {triggerCount > 0 && [...Array(5)].map((_, i) => (
+                <motion.div
+                  key={`particle-${triggerCount}-${i}`}
+                  initial={{
+                    x: 100 + i * 20,
+                    y: 80,
+                    opacity: 1,
+                    scale: 1
+                  }}
+                  animate={{
+                    x: 50 + Math.random() * 200,
+                    y: 20 + Math.random() * 60,
+                    opacity: 0,
+                    scale: 0
+                  }}
+                  transition={{
+                    duration: 2,
+                    delay: i * 0.1,
+                    ease: "easeOut"
+                  }}
+                  style={{
+                    position: "absolute",
+                    width: "12px",
+                    height: "12px",
+                    borderRadius: "50%",
+                    background: `hsl(${180 + i * 40}, 70%, 60%)`,
+                    pointerEvents: "none"
+                  }}
+                />
+              ))}
+            </div>
+
+            <p style={{ fontSize: "1.1rem", opacity: 0.8, fontStyle: "italic", marginTop: "1rem" }}>
+              Perfect for notifications, form validation, interactive feedback!
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// Common Pitfalls Overview slide
+function CommonPitfallsSlide() {
+  const [showNotes, setShowNotes] = useState(false);
+
+  const presenterNotes = `🎯 COMMON PITFALLS OVERVIEW - Setup for Deep Dives
+
+KEY POINTS:
+• This is an overview - next slides will show specific examples
+• Set expectations that we'll see live demos of what NOT to do
+• Build anticipation for the "gotcha" moments
+• Emphasize that these are real-world mistakes
+
+TALKING SCRIPT:
+"Before we wrap up, let's talk about common pitfalls. I've seen these mistakes cost teams days of debugging and performance issues.
+
+We're going to look at the top 3 pitfalls with live demos:
+1. Performance killers - animations that destroy your frame rate
+2. AnimatePresence mistakes - exit animations that never play
+3. Accessibility violations - making your site unusable
+
+Ready to see what NOT to do? Let's dive in..."
+
+TIMING: 1-2 minutes (quick overview)
+NEXT: Move to individual pitfall demo slides`;
+
+  const pitfalls = [
+    { icon: "🐌", title: "Performance Killers", summary: "Layout vs Transform properties" },
+    { icon: "👻", title: "AnimatePresence Mistakes", summary: "Exit animations that never play" },
+    { icon: "♿", title: "Accessibility Issues", summary: "Ignoring user motion preferences" }
+  ];
+
+  return (
+    <>
+      <PresenterNotes
+        notes={presenterNotes}
+        isVisible={showNotes}
+        onToggle={() => setShowNotes(!showNotes)}
+      />
+      <div style={{ maxWidth: "95%", margin: "0 auto", padding: "2rem" }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ fontSize: "4rem", textAlign: "center", marginBottom: "3rem", color: "#ef4444" }}
+        >
+          ⚠️ Common Pitfalls
+        </motion.h1>
+
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "3rem",
+          marginBottom: "3rem"
+        }}>
+          {pitfalls.map((pitfall, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              style={{
+                background: "linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))",
+                borderRadius: "16px",
+                padding: "2rem",
+                textAlign: "center",
+                border: "2px solid rgba(255,255,255,0.1)"
+              }}
+            >
+              <div style={{ fontSize: "4rem", marginBottom: "1rem" }}>
+                {pitfall.icon}
+              </div>
+              <h3 style={{ fontSize: "1.8rem", margin: "0 0 1rem 0", color: "#fff" }}>
+                {pitfall.title}
+              </h3>
+              <p style={{ fontSize: "1.2rem", opacity: 0.8, lineHeight: 1.4, margin: 0 }}>
+                {pitfall.summary}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: "center" }}>
+          <p style={{ fontSize: "1.5rem", opacity: 0.9, marginBottom: "1rem" }}>
+            Next: Live demos of each pitfall 🎬
+          </p>
+          <p style={{ fontSize: "1.2rem", opacity: 0.7 }}>
+            See exactly what goes wrong and how to fix it
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// Performance Pitfall Demo slide
+function PerformancePitfallSlide() {
+  const [demoType, setDemoType] = useState<"bad" | "good">("bad");
+  const [triggerAnimation, setTriggerAnimation] = useState(0);
+  const [showNotes, setShowNotes] = useState(false);
+
+  const presenterNotes = `🎯 PERFORMANCE PITFALL DEMO - Show the Difference
+
+KEY POINTS:
+• Start with BAD demo - let audience see the jank
+• Switch to GOOD demo - show the smoothness difference
+• Explain WHY this happens (layout vs transform)
+• Emphasize this is the #1 performance mistake
+
+TALKING SCRIPT:
+"Here's the biggest performance killer in Motion animations.
+
+[Show BAD demo] Watch this - animating layout properties like left, top, width. See how janky it feels? The browser has to recalculate the entire page layout on every frame.
+
+[Trigger multiple times] Notice the stuttering? This kills performance, especially on mobile devices.
+
+[Switch to GOOD] Now watch the same visual effect using transform properties - x, y, scale. Buttery smooth! The GPU handles these efficiently.
+
+The visual result is identical, but the performance difference is night and day."
+
+TIMING: 2-3 minutes
+DEMO TIP: Trigger animations multiple times to show the difference!`;
+
+  return (
+    <>
+      <PresenterNotes
+        notes={presenterNotes}
+        isVisible={showNotes}
+        onToggle={() => setShowNotes(!showNotes)}
+      />
+      <div style={{ maxWidth: "95%", margin: "0 auto", padding: "2rem" }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ fontSize: "4rem", textAlign: "center", marginBottom: "3rem", color: "#ef4444" }}
+        >
+          🐌 Performance Pitfall Demo
+        </motion.h1>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+          {/* Code Comparison */}
+          <div>
+            <div style={{ marginBottom: "2rem", textAlign: "center" }}>
+              <button
+                onClick={() => setDemoType(demoType === "bad" ? "good" : "bad")}
+                style={{
+                  padding: "1rem 2rem",
+                  fontSize: "1.3rem",
+                  borderRadius: "8px",
+                  border: "none",
+                  background: demoType === "bad" ? "#ef4444" : "#10b981",
+                  color: "white",
+                  cursor: "pointer",
+                  fontWeight: "bold"
+                }}
+              >
+                {demoType === "bad" ? "❌ BAD (Layout Properties)" : "✅ GOOD (Transform Properties)"}
+              </button>
+            </div>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={demoType}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                style={{ background: "#1a1a1a", padding: "2rem", borderRadius: "12px" }}
+              >
+                <pre style={{ fontSize: "1rem", lineHeight: 1.5, margin: 0, overflow: "auto" }}>
+                  <code>
+                    {demoType === "bad" ? `// ❌ PERFORMANCE KILLER
+<motion.div
+  animate={{
+    left: expanded ? 300 : 50,     // Layout!
+    top: expanded ? 100 : 50,      // Layout!
+    width: expanded ? 200 : 100,   // Layout!
+    height: expanded ? 200 : 100   // Layout!
+  }}
+  transition={{ duration: 0.5 }}
+>
+  Janky Animation
+</motion.div>
+
+// Forces browser to:
+// 1. Recalculate layout
+// 2. Repaint everything
+// 3. Composite layers
+// Result: Stuttery, slow animation` : `// ✅ SMOOTH PERFORMANCE
+<motion.div
+  animate={{
+    x: expanded ? 250 : 0,         // Transform!
+    y: expanded ? 50 : 0,          // Transform!
+    scaleX: expanded ? 2 : 1,      // Transform!
+    scaleY: expanded ? 2 : 1       // Transform!
+  }}
+  transition={{ duration: 0.5 }}
+>
+  Smooth Animation
+</motion.div>
+
+// GPU accelerated:
+// 1. No layout recalculation
+// 2. Hardware acceleration
+// 3. Composite only
+// Result: Buttery smooth 60fps`}
+                  </code>
+                </pre>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Live Demo */}
+          <div style={{ textAlign: "center" }}>
+            <h3 style={{ fontSize: "2.5rem", marginBottom: "2rem" }}>Live Demo</h3>
+
+            <button
+              onClick={() => setTriggerAnimation(prev => prev + 1)}
+              style={{
+                padding: "1.5rem 3rem",
+                fontSize: "1.4rem",
+                borderRadius: "12px",
+                border: "none",
+                background: "#6366f1",
+                color: "white",
+                cursor: "pointer",
+                marginBottom: "3rem",
+                fontWeight: "bold"
+              }}
+            >
+              🎬 Trigger Animation
+            </button>
+
+            <div style={{ position: "relative", height: "300px", background: "rgba(255,255,255,0.1)", borderRadius: "12px", overflow: "hidden" }}>
+              {demoType === "bad" ? (
+                // BAD: Layout properties (will be janky)
+                <motion.div
+                  key={`bad-${triggerAnimation}`}
+                  initial={{ left: 50, top: 50, width: 100, height: 100 }}
+                  animate={{
+                    left: [50, 250, 50],
+                    top: [50, 150, 50],
+                    width: [100, 150, 100],
+                    height: [100, 150, 100]
+                  }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    background: "linear-gradient(135deg, #ef4444, #dc2626)",
+                    borderRadius: "8px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "white",
+                    fontWeight: "bold",
+                    fontSize: "1.2rem"
+                  }}
+                >
+                  JANKY
+                </motion.div>
+              ) : (
+                // GOOD: Transform properties (smooth)
+                <motion.div
+                  key={`good-${triggerAnimation}`}
+                  initial={{ x: 0, y: 0, scale: 1 }}
+                  animate={{
+                    x: [0, 200, 0],
+                    y: [0, 100, 0],
+                    scale: [1, 1.5, 1]
+                  }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    left: 50,
+                    top: 50,
+                    width: 100,
+                    height: 100,
+                    background: "linear-gradient(135deg, #10b981, #059669)",
+                    borderRadius: "8px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "white",
+                    fontWeight: "bold",
+                    fontSize: "1.2rem"
+                  }}
+                >
+                  SMOOTH
+                </motion.div>
+              )}
+            </div>
+
+            <p style={{ fontSize: "1.3rem", marginTop: "2rem", opacity: 0.9 }}>
+              {demoType === "bad"
+                ? "⚠️ Notice the stuttering and poor performance"
+                : "✅ Buttery smooth 60fps animation"
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// AnimatePresence Pitfall Demo slide
+function AnimatePresencePitfallSlide() {
+  const [demoType, setDemoType] = useState<"bad" | "good">("bad");
+  const [showItems, setShowItems] = useState(true);
+  const [showNotes, setShowNotes] = useState(false);
+
+  const presenterNotes = `🎯 ANIMATEPRESENCE PITFALL DEMO - Exit Animation Mystery
+
+KEY POINTS:
+• Start with BAD demo - exit animations don't work
+• Show the audience the frustration of broken animations
+• Switch to GOOD demo - smooth exit animations
+• Explain the key and structure requirements
+
+TALKING SCRIPT:
+"Here's a subtle but frustrating mistake - exit animations that never play.
+
+[Show BAD demo] Watch when I remove items - they just disappear instantly. No exit animation, even though we defined one.
+
+[Toggle multiple times] See? The exit animation is completely ignored. This happens when AnimatePresence structure is wrong.
+
+[Switch to GOOD] Now watch the same code with proper structure - beautiful exit animations!
+
+The difference? AnimatePresence must wrap the conditional, and each child needs a unique key."
+
+TIMING: 2-3 minutes
+DEMO TIP: Toggle items multiple times to show the difference clearly!`;
+
+  return (
+    <>
+      <PresenterNotes
+        notes={presenterNotes}
+        isVisible={showNotes}
+        onToggle={() => setShowNotes(!showNotes)}
+      />
+      <div style={{ maxWidth: "95%", margin: "0 auto", padding: "2rem" }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ fontSize: "4rem", textAlign: "center", marginBottom: "3rem", color: "#8b5cf6" }}
+        >
+          👻 AnimatePresence Pitfall Demo
+        </motion.h1>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+          {/* Code Comparison */}
+          <div>
+            <div style={{ marginBottom: "2rem", textAlign: "center" }}>
+              <button
+                onClick={() => setDemoType(demoType === "bad" ? "good" : "bad")}
+                style={{
+                  padding: "1rem 2rem",
+                  fontSize: "1.3rem",
+                  borderRadius: "8px",
+                  border: "none",
+                  background: demoType === "bad" ? "#ef4444" : "#10b981",
+                  color: "white",
+                  cursor: "pointer",
+                  fontWeight: "bold"
+                }}
+              >
+                {demoType === "bad" ? "❌ BAD (Wrong Structure)" : "✅ GOOD (Correct Structure)"}
+              </button>
+            </div>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={demoType}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                style={{ background: "#1a1a1a", padding: "2rem", borderRadius: "12px" }}
+              >
+                <pre style={{ fontSize: "0.9rem", lineHeight: 1.5, margin: 0, overflow: "auto" }}>
+                  <code>
+                    {demoType === "bad" ? `// ❌ EXIT ANIMATIONS DON'T WORK
+{showItems && (
+  <AnimatePresence>
+    <motion.div
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      Item 1
+    </motion.div>
+    <motion.div
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      Item 2
+    </motion.div>
+  </AnimatePresence>
+)}
+
+// Problems:
+// 1. AnimatePresence inside conditional
+// 2. No unique keys
+// 3. Exit animations never play` : `// ✅ EXIT ANIMATIONS WORK PERFECTLY
+<AnimatePresence>
+  {showItems && [
+    <motion.div
+      key="item-1"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      Item 1
+    </motion.div>,
+    <motion.div
+      key="item-2"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      Item 2
+    </motion.div>
+  ]}
+</AnimatePresence>
+
+// Fixed:
+// 1. AnimatePresence wraps conditional
+// 2. Unique keys for each item
+// 3. Beautiful exit animations!`}
+                  </code>
+                </pre>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Live Demo */}
+          <div style={{ textAlign: "center" }}>
+            <h3 style={{ fontSize: "2.5rem", marginBottom: "2rem" }}>Live Demo</h3>
+
+            <button
+              onClick={() => setShowItems(!showItems)}
+              style={{
+                padding: "1.5rem 3rem",
+                fontSize: "1.4rem",
+                borderRadius: "12px",
+                border: "none",
+                background: "#6366f1",
+                color: "white",
+                cursor: "pointer",
+                marginBottom: "3rem",
+                fontWeight: "bold"
+              }}
+            >
+              {showItems ? "🗑️ Remove Items" : "✨ Add Items"}
+            </button>
+
+            <div style={{ minHeight: "200px", display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center" }}>
+              {demoType === "bad" ? (
+                // BAD: Wrong AnimatePresence structure
+                showItems && (
+                  <AnimatePresence>
+                    <motion.div
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5 }}
+                      style={{
+                        padding: "1rem 2rem",
+                        background: "linear-gradient(135deg, #ef4444, #dc2626)",
+                        color: "white",
+                        borderRadius: "8px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Item 1 (No Exit Animation!)
+                    </motion.div>
+                    <motion.div
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5 }}
+                      style={{
+                        padding: "1rem 2rem",
+                        background: "linear-gradient(135deg, #ef4444, #dc2626)",
+                        color: "white",
+                        borderRadius: "8px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Item 2 (No Exit Animation!)
+                    </motion.div>
+                  </AnimatePresence>
+                )
+              ) : (
+                // GOOD: Correct AnimatePresence structure
+                <AnimatePresence>
+                  {showItems && [
+                    <motion.div
+                      key="item-1"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5 }}
+                      style={{
+                        padding: "1rem 2rem",
+                        background: "linear-gradient(135deg, #10b981, #059669)",
+                        color: "white",
+                        borderRadius: "8px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Item 1 (Smooth Exit!)
+                    </motion.div>,
+                    <motion.div
+                      key="item-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                      style={{
+                        padding: "1rem 2rem",
+                        background: "linear-gradient(135deg, #10b981, #059669)",
+                        color: "white",
+                        borderRadius: "8px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Item 2 (Smooth Exit!)
+                    </motion.div>
+                  ]}
+                </AnimatePresence>
+              )}
+            </div>
+
+            <p style={{ fontSize: "1.3rem", marginTop: "2rem", opacity: 0.9 }}>
+              {demoType === "bad"
+                ? "⚠️ Items disappear instantly - no exit animation"
+                : "✅ Beautiful exit animations with proper structure"
+              }
             </p>
           </div>
         </div>
@@ -1241,7 +2319,7 @@ DEMO TIP: Show both demos multiple times to make the concepts stick!`;
   Click count: {counter}
 </motion.div>`}
                 </code>
-      </pre>
+              </pre>
             </div>
 
             <div style={{ height: "100px", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -1451,7 +2529,7 @@ MEETUP TIP: Move around, be social, and encourage people to connect with each ot
         justifyContent: "center",
         alignItems: "center"
       }}>
-    <motion.div
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -1459,7 +2537,7 @@ MEETUP TIP: Move around, be social, and encourage people to connect with each ot
         >
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             style={{
               fontSize: "5rem",
@@ -1508,7 +2586,7 @@ export default function Slides() {
     <EnterExitSlide key="enter-exit" />,
     <LayoutMagicSlide key="layout" />,
     <GesturesSlide key="gestures" />,
-
+    <AccessibilitySlide key="accessibility" />,
     <KeyTipsSlide key="key-tips" />,
     <ThanksSlide key="thanks" />,
   ];
@@ -1518,8 +2596,8 @@ export default function Slides() {
 
   const go = useCallback(
     (dir: Direction) => {
-    setDirection(dir);
-    setIndex((i) => Math.max(0, Math.min(slides.length - 1, i + dir)));
+      setDirection(dir);
+      setIndex((i) => Math.max(0, Math.min(slides.length - 1, i + dir)));
     },
     [slides.length]
   );
